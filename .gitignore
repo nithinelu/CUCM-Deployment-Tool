@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+config.json
+logs/
+templates/*_result_*.xlsx
+templates/*_ROLLBACK.xlsx
+~$*.xlsx

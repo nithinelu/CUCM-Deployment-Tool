@@ -1,0 +1,5 @@
+{css_new_name},{description},{Css_International member},{Css_Gsm member },{Css_Landline  member },{Css_Internal member}
+Css_Internal,Internal Calling Privilege,P_Internal,P_Internal,P_Internal,P_Internal
+Css_Landline,Landline Calling Privilege,P_Landline,P_Landline,P_Landline,
+Css_Gsm,Gsm Calling Privilege,P_Gsm,P_Gsm,,
+Css_International,International  Calling Privilege,P_International,,,

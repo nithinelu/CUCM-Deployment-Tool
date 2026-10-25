@@ -1,0 +1,5 @@
+﻿name,description
+P_Internal,Internal Calling Group
+P_Landline,Landline Calling Group
+P_Gsm,gsm Calling Group
+P_International,International Calling Group
