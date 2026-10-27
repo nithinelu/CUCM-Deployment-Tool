@@ -139,25 +139,7 @@ security profiles (the built-in ones are used), certificates, and service parame
 | `tools/build_schema_map.py` | Regenerates `axl_schema.json` from AXL XSDs |
 | `logs/` | Full request and response XML for every failed call |
 
-## What was wrong in the original script
 
-* `schema/<version>/AXLAPI.wsdl` was required but not in the repository, so the script could not
-  start on any version.
-* `ucm.add_route_group(...)` called an undefined object (`NameError`) and the script stopped there.
-* The CSS loop read the CSV columns in reverse: `Css_Internal` got the four *international*
-  partitions and `Css_International` got only `P_Internal`.
-* The ULT dict had `"noAnsExtCallsDestination" "noAnsExtCallsCss"`. Python joins two adjacent
-  strings into one, so this made a single bogus key. The ULT name you typed was also ignored
-  (it was always `ULT`), and its CSS `CSS_Internal` did not match the created `Css_Internal`.
-* The UDT dict repeated `devicePool` three times.
-* MRG member `ANN_2`, route list `testRouteList`, route pattern `1234567890` and region names
-  were hard-coded. The route pattern pointed at `testRouteList` instead of the list you created.
-* The script ended by **deleting** the route pattern and route list it had just made.
-* Any single AXL fault ran `sys.exit(1)`. You could not re-run, skip existing objects or
-  continue past an error.
-* `pkg-resources==0.0.0` in `requirements.txt` breaks `pip install`. `pandas` was imported but
-  not listed.
-* There was no validation, dry run, logging or record of what was configured.
 
 ## License
 
